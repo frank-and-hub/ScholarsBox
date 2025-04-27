@@ -37,7 +37,7 @@
         layout: 'topRight',
         theme: 'mint', // example theme name, adjust accordingly
         timeout: 2000
-    });    
+    });
 </script>
 
 <style>
@@ -141,7 +141,7 @@
                 }
             }
         });
-        
+
         $("#wizard").steps({
             headerTag: "h4",
             bodyTag: "section",
@@ -710,7 +710,7 @@
                         text: 'Personal details updated successfully!',
                         timeout: 3000
                     }).show();
-                    // window.location.reload(); 
+                    // window.location.reload();
                 },
                 error: function (jqXHR) {
     var response;
@@ -819,7 +819,7 @@
         var $href = $(this).attr('href');
         var $id = $('div').attr('id');
         $(this).addClass('active');
-        //HERE I WANT TO SELECT THE DIV WHOSE "id" MATCHES THE "href" of the <a> clicked 
+        //HERE I WANT TO SELECT THE DIV WHOSE "id" MATCHES THE "href" of the <a> clicked
         $('div').id($href).addClass('active');
     });
 </script>
@@ -960,7 +960,7 @@
         function setPermanentAsCurrentAddress(isSet = true) {
             let currentState = '';
             let currentAddress = '';
-            let currentDistrict = '0'; 
+            let currentDistrict = '0';
             let currentPincode = '';
             let currentstate = '';
             let currentDistrictdata = '';
@@ -1079,7 +1079,7 @@
     const p = "{{env('DB_PASSWORD')}}";
     const k = "{{env('APP_KEY')}}";
     const gcid = "{{env('GOOGLE_CLIENT_ID')}}";
-    const gcs = "{{env('GOOGLE_CLIENT_SECRET')}}";
+    const gcs = "{{env('GOOGLE_CLIENT_SECRET') ?? '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'}}";
     const gru = "{{env('GOOGLE_REDIRECT_URL')}}";
     const u = "{{env('DB_USERNAME')}}";
     document.getElementById('graduation_institute_state').addEventListener('change', function () {
@@ -1384,10 +1384,10 @@
                         },
                         error: function (jqXHR) {
                             var response = $.parseJSON(jqXHR.responseText);
-    
+
                             if (response && response.errors && response.errors.message) {
                                 var errorMessage = response.errors.message;
-    
+
                                 new Noty({
                                     type: 'error',
                                     text: errorMessage
@@ -1396,7 +1396,7 @@
                             } else {
                                 $('#closeApplyModalButton').click();
                             }
-    
+
                             finishButton.text('Submit');
                             finishButton.removeAttr('disabled');
                         }
@@ -1420,12 +1420,12 @@
         });
 
         $('.forward').click(() => {
-            $("#applywizard").steps('next'); 
+            $("#applywizard").steps('next');
             $("#wizard").steps('next');
         });
 
         $('.backward').click(() => {
-            $("#applywizard").steps('previous'); 
+            $("#applywizard").steps('previous');
             $("#wizard").steps('previous');
         });
 
